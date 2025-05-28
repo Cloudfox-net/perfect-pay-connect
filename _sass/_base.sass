@@ -1,0 +1,153 @@
+
+// color themes
+$brand-dark: #002E3D
+$brand-light: #2DDFD9
+$brand-middle: #005D72
+$neutral_0: #FFFFFF
+
+// fonts
+%title
+  font-family: "Anton", sans-serif
+  font-weight: 400
+  font-style: normal
+
+%text
+  font-family: "Montserrat", sans-serif
+  font-optical-sizing: auto
+  font-weight: 500
+  font-style: normal
+
+
+$ease: cubic-bezier(0.5,0,0,1)
+
+
+// resets
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, nav, section, menu, time, mark, audio, video, canvas
+  margin:     0
+  padding:    0
+  border:     0
+  outline:     none
+
+html, body
+  min-height:               100%
+  -ms-text-size-adjust:     100%
+  -webkit-text-size-adjust: 100%
+  outline:                  none
+
+body, input, textarea, button
+  -webkit-font-smoothing: antialiased
+  color: $brand-dark
+  @extend %text
+  font-size: 1rem 
+
+body
+  overflow-x: hidden
+
+a
+  text-decoration: none
+ul, ol, dl
+  list-style: none
+button
+  padding: 0
+  border: 0
+  background: transparent
+img
+  display: block
+
+
+// selection
+::selection
+  background:       $brand-middle
+  color:            $neutral_0
+  text-shadow:      none
+
+
+// placeholder
+::-webkit-input-placeholder
+  color: $brand-dark
+::-moz-placeholder
+  color: $brand-dark
+\:-moz-placeholder
+  color: $brand-dark
+\:-ms-input-placeholder
+  color: $brand-dark
+
+
+// scrollbars webkit
+::-webkit-scrollbar
+  width: .75rem
+  background-color: $brand-middle
+  
+::-webkit-scrollbar-track
+  border-radius: .25rem
+
+::-webkit-scrollbar-thumb
+  // border-radius: .5rem
+  background-color: $brand-light
+  border-right: solid .25rem $brand-middle
+  border-left: solid 1px $brand-middle
+  -webkit-background-clip: content-box
+
+  &:hover
+    border-right: solid .75rem $brand-light
+  
+// ::-webkit-scrollbar-thumb:window-inactive
+//   background: var(--neutral_20)
+//   border: solid 1px red
+
+::-webkit-scrollbar-button:start,
+::-webkit-scrollbar-button:end
+  height: .5rem
+
+
+
+%clear
+  &:after
+    height:             0
+    clear:              both
+    content:            "."
+    display:            block
+    font-size:          0
+    visibility:         hidden
+    position:           initial
+
+
+
+// media queries
+@mixin for-size($size)
+  @if $size == phone
+    @media (max-width: 40rem)
+      @content
+  @else if $size == tablet_md
+    @media (max-width: 48rem)
+      @content
+  @else if $size == tablet_lg
+    @media (max-width: 64rem)// and (orientation:portrait)
+      @content
+  @else if $size == desk_sm
+    @media (max-width: 1280px)
+      @content
+  @else if $size == desk_md
+    @media (max-width: 1536px)
+      @content
+
+
+$main_column: 1536px
+
+
+%input_focus
+  outline:
+    width: .25rem
+    style: solid
+    color: transparent
+    offset: -.25rem
+  &:hover
+    outline-color: black
+  &:focus
+    outline-color: #FFE2A9
+
+
+.app
+  width: 100vw
+  box-sizing: border-box
+  overflow-x: hidden
