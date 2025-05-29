@@ -22,7 +22,7 @@ title: Perfect Pay Connect
 description: >- # this means to ignore newlines until "baseurl:"
   Conecte-se com os gigantes do digital no Perfect Pay Connect e transforme seu negócio com as ferramentas mais inovadoras do mercado.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://cloudfox-net.github.io/perfect-pay-connect" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://connect.perfectpay.com.br" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 
