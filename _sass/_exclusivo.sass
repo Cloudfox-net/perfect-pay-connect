@@ -1,0 +1,174 @@
+.exclusivo
+	background-color: #F2F2F2
+	padding-bottom: 6rem
+	position: relative
+
+	&::before
+		content: ''
+		width: 75rem
+		height: 54rem
+		background-color: #00B5AF
+		mask-image: url("../img/exclusivo-elm.svg")
+		mask-size: contain
+		mask-repeat: no-repeat
+		mask-position: left center
+		position: absolute
+		bottom: -17rem
+		left: 0
+
+	hgroup
+		max-width: $main_column
+		margin: 0 auto
+
+		h2
+			@extend %title
+			font-size: 3rem
+			text-transform: uppercase
+			line-height: 4rem
+			color: $brand-dark
+			text-align: center
+			padding: 5.5rem 0 1.5rem
+		p
+			text-align: center
+			line-height: 1.625rem
+			padding: 0 2rem
+
+	a
+		width: max-content
+		height: 3rem
+		line-height: 3rem
+		border-radius: .5rem
+		padding: 0 1rem
+		text-transform: uppercase
+		font-size: .9rem
+		font-weight: 700
+		background-image: linear-gradient(to right, #03B4AE, #2DDFD9)
+		color: $brand-dark
+		display: flex
+		align-items: center
+		justify-content: center
+		gap: .5rem
+		transition: transform .8s $ease
+		margin: 2.5rem auto 3.5rem
+		&:hover
+			transform: scale(1.03)
+			transition: transform .3s $ease
+		i
+			flex: 0 0 1.25rem
+			height: 1.25rem
+			background: url("../img/icons/plus.svg") no-repeat center
+
+	div
+		width: max-content
+		height: 26.25rem
+		display: flex
+		gap: 2rem
+		align-items: stretch
+		margin: 0 auto
+
+		article
+			flex: 0 0 25rem
+			background-color: white
+			border-radius: 1.5rem
+			box-sizing: border-box
+			padding: 6rem 3.5rem 0
+			position: relative
+			z-index: 1
+
+			&:first-child
+				h3
+					&::before
+						content: ''
+						width: 100%
+						height: 1.25rem
+						background-color: $brand-light
+						mask-image: url("../img/zigzag.svg")
+						mask-size: contain
+						mask-repeat: no-repeat
+						mask-position: center
+						position: absolute
+						top: -2rem
+						left: 0
+
+			&:last-child
+				background-color: $brand-light
+				&::after
+					content: ''
+					width: 13rem
+					height: 8rem
+					background-color: $brand-dark
+					mask-image: url("../img/exclusivo-arrow.svg")
+					mask-size: contain
+					mask-repeat: no-repeat
+					mask-position: center
+					position: absolute
+					top: 50%
+					right: -42%
+					transform: translateY(-50%) rotate(-20deg)
+				h3
+					&::before
+						content: ''
+						width: 100%
+						height: 4.5rem
+						background-color: #005D71
+						mask-image: url("../img/sun.svg")
+						mask-size: contain
+						mask-repeat: no-repeat
+						mask-position: center
+						position: absolute
+						top: -5.2rem
+						left: 0
+			h3
+				@extend %title
+				font-size: 2.25rem
+				text-transform: uppercase
+				line-height: 2.5rem
+				color: $brand-dark
+				text-align: center
+				position: relative
+
+			p
+				font-size: .875rem
+				line-height: 1.4rem
+				text-align: center
+				padding-top: .75rem
+
+
+@include for-size(tablet_md)
+	.exclusivo
+		hgroup
+			padding: 0 4vw
+			p
+				font-size: 1.2rem
+				line-height: 2rem
+		div
+			width: 100%
+			box-sizing: border-box
+			padding: 0 8vw
+			flex-direction: column
+			align-items: flex-start
+			height: auto
+			article
+				width: 100%
+				flex: 0 0 auto
+				padding: 6rem 10vw 3rem
+				&:last-child
+					&::after
+						top: -10%
+						right: -10%
+						transform: rotate(-20deg)
+
+
+@include for-size(phone)
+	.exclusivo
+		&::before
+			bottom: 0
+			left: -14rem
+		div
+			article
+				&:last-child
+					&::after
+						right: -20%
+						transform: rotate(-50deg) scale(.8)
+
+
