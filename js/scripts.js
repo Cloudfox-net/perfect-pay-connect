@@ -11,3 +11,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+
+// splide
+document.addEventListener( 'DOMContentLoaded', function() {
+  var splide = new Splide( '.splide', {
+    type: 'fade',
+    perPage: 1,
+    arrows: boolean = true,
+    pagination: boolean = true,
+    paginationKeyboard: boolean = true,
+    autoplay: boolean = true,
+    interval: number = 5000,
+    pauseOnHover: boolean = true,
+    rewind: boolean = true,
+  });
+  splide.mount();
+});
+

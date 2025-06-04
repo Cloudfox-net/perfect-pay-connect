@@ -1,0 +1,367 @@
+.historias
+	background-color: $brand-dark
+	padding: 6rem 0
+	position: relative
+
+	&::after
+		content: ''
+		width: 30vw
+		height: 30vw
+		background:
+			repeat: no-repeat
+			size: cover
+			position: center
+			image: url("../img/ticket-frame-right.svg")
+		position: absolute
+		bottom: 22%
+		right: 0
+
+
+	.splide
+		max-width: $main_column
+		margin: 0 auto
+		position: relative
+		z-index: 2
+
+		&::before
+			content: ''
+			width: 25rem
+			height: 14rem
+			background: url("../img/boxes.png") no-repeat center
+				size: contain
+			position: absolute
+			right: 1rem
+			bottom: -38%
+			z-index: 2
+
+	header
+		width: 24rem
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 1
+
+		h2
+			@extend %title
+			font-size: 3rem
+			text-transform: uppercase
+			line-height: 4rem
+			color: $brand-light
+		p
+			font-size: 1.25rem
+			line-height: 1.75rem
+			color: white
+			padding: .5rem 0 0
+
+	.splide__slide
+		display: flex
+		justify-content: space-between
+		align-items: flex-end
+		color: white
+
+		figure
+			order: 2
+			flex: 0 0 35rem
+			position: relative
+			overflow: hidden
+			border-radius: 1.75rem
+			&::after
+				content: ''
+				width: 100%
+				height: 80%
+				background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .8))
+				position: absolute
+				bottom: 0
+				left: 0
+		img
+			width: 100%
+			height: auto
+
+		hgroup
+			order: 1
+			flex: 0 0 26rem
+			box-sizing: border-box
+			padding: 1.5rem 2rem
+			background-color: #005D72
+			color: white
+			border-radius: .8rem
+			h3
+				font-size: 1.3rem
+				font-weight: 800
+				text-transform: uppercase
+				padding: 0 0 .75rem
+				margin: 0 0 .75rem
+				border-bottom: solid 1px #00E1DA
+			p
+				font-size: .875rem
+				line-height: 125%
+
+	.splide__arrows
+		width: 35rem
+		display: flex
+		justify-content: space-between
+		box-sizing: border-box
+		padding: 0 1rem
+		position: absolute
+		top: 50%
+		right: 0
+		transform: translateY(-50%)
+		z-index: 1
+
+		button
+			width: 3.5rem
+			height: 3.5rem
+			background-color: $brand-light
+			border-radius: 100%
+			cursor: pointer
+			display: flex
+			justify-content: center
+			align-items: center
+			box-shadow: 0 10px 20px rgba(0, 0, 0, .5)
+			transition: transform .3s
+			path
+				fill: white
+			&:first-child svg
+				transform: rotate(180deg)
+			&:hover
+				transform: scale(.95)
+
+	.splide__pagination
+		width: 35rem
+		position: absolute
+		bottom: 2.5rem
+		right: 0
+		display: flex
+		justify-content: center
+		gap: .5rem
+		z-index: 1
+
+		button
+			width: .875rem
+			height: .875rem
+			border-radius: 100%
+			background-color: rgba(255, 255, 255, .2)
+			cursor: pointer
+			&:hover
+				background-color: rgba(255, 255, 255, .4)
+			&.is-active
+				background-color: white
+
+
+
+.atracoes
+	max-width: $main_column
+	margin: 4rem auto 0
+	position: relative
+	z-index: 2
+
+	h2
+		@extend %title
+		font-size: 3rem
+		text-transform: uppercase
+		line-height: 4rem
+		color: $brand-light
+		width: 50%
+	ul
+		margin: 3.5rem 0 0
+		display: flex
+		gap: 1.5rem
+	li
+		flex: 1
+		height: 12.5rem
+		box-sizing: border-box
+		padding: 1.5rem
+		background-color: $brand-light
+		color: $brand-dark
+		border-radius: .7rem
+		text-align: center
+		display: flex
+		flex-direction: column
+		gap: .75rem
+		justify-content: center
+		align-items: center
+		i
+			width: 2.75rem
+			flex: 0 0 2.75rem
+			background:
+				repeat: no-repeat
+				size: contain
+				position: center
+		h3
+			@extend %title
+			font-size: 1.25rem
+			text-transform: uppercase
+			line-height: 1.5rem
+		&:nth-child(1) i
+			background-image: url("../img/icons/atr1.svg")
+		&:nth-child(2) i
+			background-image: url("../img/icons/atr2.svg")
+		&:nth-child(3) i
+			background-image: url("../img/icons/atr3.svg")
+		&:nth-child(4) i
+			background-image: url("../img/icons/atr4.svg")
+
+
+
+
+
+
+
+
+@include for-size(desk_sm)
+	.historias
+		.splide
+			width: 95vw
+	.atracoes
+		width: 95vw
+
+@include for-size(tablet_lg)
+	.historias
+		header
+			width: 40vw
+			h2
+				font-size: 4vw
+		.splide
+			&::before
+				width: 32vw
+		.splide__slide
+			figure
+				flex: 0 0 50vw
+			hgroup
+				flex: 0 0 40vw
+		.splide__arrows
+			width: 50vw
+		.splide__pagination
+			width: 50vw
+
+	.atracoes
+		ul
+			flex-wrap: wrap
+		li
+			flex: 1 1 40%
+
+
+@include for-size(tablet_md)
+	.historias
+		.splide
+			width: 84vw
+			&::before
+				display: none
+		header
+			width: 100%
+			text-align: center
+			position: initial
+			margin-bottom: 2.5rem
+			h2
+				font-size: 8vw
+				line-height: 10vw
+				width: 60%
+				margin: 0 auto
+			p
+				font-size: 4vw
+				line-height: 5vw
+		.splide__slide
+			display: block
+			figure
+				width: 100%
+				border-radius: 2rem
+			hgroup
+				width: 100%
+				margin-top: -2.5rem
+				border-radius: 0 0 2rem 2rem
+				padding: 5vw
+				position: relative
+				z-index: 2
+				h3
+					font-size: 4vw
+				p
+					font-size: 2.5vw
+					line-height: 4vw
+		.splide__arrows
+			width: 10rem
+			top: 97vw
+			transform: initial
+		.splide__pagination
+			width: 100%
+			bottom: initial
+			top: 28rem
+
+	.atracoes
+		width: 84vw
+		h2
+			width: 100%
+			text-align: center
+		li
+			flex: 1 1 40%
+				
+
+
+@include for-size(phone)
+	.historias
+		padding: 3rem 0
+		&::after
+			display: none
+		header
+			h2
+				font-size: 10vw
+				line-height: 12vw
+			p
+				font-size: 4.5vw
+				line-height: 6.5vw
+		.splide__slide
+			hgroup
+				h3
+					font-size: 6vw
+				p
+					font-size: 3.5vw
+					line-height: 5vw
+		.splide__arrows
+			width: 7.5rem
+			top: 104vw
+			button
+				width: 2.5rem
+				height: 2.5rem
+				svg
+					flex: 0 0 70%
+		.splide__pagination
+			top: 100vw
+
+	.atracoes
+		h2
+			font-size: 10vw
+			line-height: 12vw
+		li
+			flex: 1 1 100%
+			// flex-direction: row
+			// flex-wrap: wrap
+			text-align: left
+			height: auto
+			align-items: flex-start
+			justify-content: flex-start
+			padding: 1.5rem 1.5rem 1.5rem 5rem
+			position: relative
+			i
+				flex: 0 0 5rem
+				height: 5rem
+				position: absolute
+				top: 50%
+				left: 1rem
+				transform: translateY(-50%)
+			h3
+				flex: 0 0 auto
+			p
+				flex: 0 0 auto
+
+
+
+
+
+
+
+
+
+
+
+
+
+
