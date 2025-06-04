@@ -22,7 +22,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
     pagination: boolean = true,
     paginationKeyboard: boolean = true,
     autoplay: boolean = false,
-    interval: number = 5000,
+    interval: number = 10000,
     pauseOnHover: boolean = true,
     rewind: boolean = true,
   });
