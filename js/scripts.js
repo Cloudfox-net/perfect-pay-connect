@@ -21,7 +21,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
     arrows: boolean = true,
     pagination: boolean = true,
     paginationKeyboard: boolean = true,
-    autoplay: boolean = true,
+    autoplay: boolean = false,
     interval: number = 5000,
     pauseOnHover: boolean = true,
     rewind: boolean = true,
