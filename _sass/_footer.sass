@@ -1,10 +1,190 @@
 .footer
-	color: white
-	text-align: center
-	padding: 3rem 8vw
-	background-color: $brand-dark
-	font-size: .8rem
+	background-color: #F2F2F2
 
-	a
-		color: white
-		text-decoration: underline
+	.nao_perca
+		height: 32.5rem
+		position: relative
+		overflow: hidden
+
+		&::before
+			content: ''
+			width: 75rem
+			height: 54rem
+			background-color: #00B5AF
+			mask-image: url("../img/exclusivo-elm.svg")
+			mask-size: contain
+			mask-repeat: no-repeat
+			mask-position: -4rem -9rem
+			position: absolute
+			top: 0
+			left: 0
+
+		strong
+			display: block
+			width: 84vw
+			max-width: 50.5rem
+			margin: 0 auto
+			padding: 7.5rem 0 0
+			@extend %title
+			font-size: 3rem
+			text-transform: uppercase
+			line-height: 4rem
+			color: $brand-dark
+			position: relative
+			z-index: 1
+
+		span
+			display: block
+			z-index: 1
+
+			&:first-of-type
+				width: 84vw
+				max-width: 50.5rem
+				height: 12.5rem
+				margin: 1rem auto 0
+				background: url("../img/boxes2.png") no-repeat left center
+					size: 23.125rem auto
+				position: relative
+
+			&:last-of-type
+				width: 30rem
+				height: 23.75rem
+				background: url("../img/lettering.png") no-repeat center
+					size: contain
+				position: absolute
+				top: 50%
+				right: 50%
+				transform: translate(120%, -50%)
+
+
+	.contato
+		width: 84vw
+		max-width: $main_column
+		margin: 0 auto
+		padding: 5rem 0 2.25rem
+		display: flex
+		justify-content: space-between
+		align-items: center
+		font-size: .9rem
+
+		figure
+
+			overflow: hidden
+			width: 7rem
+			height: 2.1rem
+			position: relative
+			img
+				position: absolute
+				top: -6.3rem
+				left: -1.7rem
+
+		a
+			color: $brand-dark
+			text-decoration: underline
+
+
+
+	.redes
+		width: 84vw
+		max-width: $main_column
+		margin: 0 auto
+		padding: 2.25rem 0 5rem
+		display: flex
+		justify-content: space-between
+		align-items: center
+		font-size: .9rem
+		border-top: solid 1px $brand-dark
+
+		small
+			font-size: .9rem
+
+		ul
+			display: flex
+			gap: 1.5rem
+
+		a
+			display: block
+			width: 2.25rem
+			height: 2.25rem
+			background:
+				color: $brand-light
+				repeat: no-repeat
+				position: center
+			border-radius: .25rem
+
+			&[title="Telegram"]
+				background-image: url("../img/icons/telegram.svg")
+			&[title="Facebook"]
+				background-image: url("../img/icons/facebook.svg")
+			&[title="YouTube"]
+				background-image: url("../img/icons/youtube.svg")
+			&[title="Instagram"]
+				background-image: url("../img/icons/instagram.svg")
+
+			&:hover
+				opacity: .7
+
+
+
+@include for-size(tablet_lg)
+	.footer
+		.nao_perca
+			span
+				&:last-of-type
+					width: 36vw
+
+
+@include for-size(tablet_md)
+	.footer
+		.nao_perca
+			height: auto
+
+			strong
+				text-align: center
+			span
+				&:first-of-type
+					background-position: center
+				&:last-of-type
+					width: 50vw
+					position: relative
+					top: initial
+					right: initial
+					margin: 0 auto
+					transform: initial
+
+
+
+@include for-size(phone)
+	.footer
+		.nao_perca
+			strong
+				font-size: 9vw
+				line-height: 10vw
+			span
+				&:first-of-type
+					background-size: 80vw auto
+				&:last-of-type
+					width: 80vw
+
+		.contato
+			display: block
+			text-align: center
+			padding: 0rem 0 2.25rem
+			figure
+				height: 9rem
+				margin: 0 auto 2rem
+				img
+					top: 0
+
+		.redes
+			flex-flow: column
+			flex-wrap: wrap
+			text-align: center
+
+			small
+				order: 2
+			ul
+				order: 1
+				margin-bottom: 2rem
+
+
